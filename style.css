@@ -1,0 +1,33 @@
+body{
+    background: rgb(34, 9, 31);
+}
+.main-input{
+    width: 50%;
+    height: 30px;
+}
+.submit-button{
+    width: 70px;
+    height: 30px;
+    position: relative;
+    float: right;
+    padding: 0;
+    margin: 0;
+    margin-top: 10px;
+}
+span,ol{
+    color: white;
+    font-size: 18px;
+    
+}
+/* .newInput{
+    margin: 40px 0 0 373px;
+    position: absolute;
+    width: 20%;
+    height: 30px;
+} */
+span{
+    border-bottom: 1px solid white;
+}
+.element{
+    max-width: 550px;
+}

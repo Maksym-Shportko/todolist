@@ -4,7 +4,7 @@ const submitButton = document.querySelector(".submit-button");
 var listElement = document.getElementsByClassName("element");
 const correctionInput = document.getElementsByClassName("correctionInput");
 let newBtn = document.getElementsByClassName("newBtn");
-
+var myList = document.getElementById('myList');
 // ДОБАВЛЕНИЕ ПУНКТА В СПИСОК
 submitButton.onclick = function submitTask() {
   var node = document.createElement("LI");
@@ -21,38 +21,42 @@ submitButton.onclick = function submitTask() {
   node.appendChild(correction);
   document.getElementById("myList").appendChild(node);
   mainInput.value = "";
-  deleted.onclick = myFoo(node);
-  correction.onclick = anotherFoo(span, node);
+  deleted.onclick = removeFoo(node);
+
+  correction.onclick = correctionFoo(span, node,);
 };
 
 //   удаление задачи
-function myFoo(node) {
+function removeFoo(node) {
   return function() {
     var list = document.getElementById("myList");
     list.removeChild(node);
   };
 };
 // получение нового значения
-function anotherFoo(span, node) {
+function correctionFoo(span, node) {
   return function() {
+    if(node.querySelector('.newInput')){
+      return;
+    }
     var newInput = document.createElement("input");
     var newBtn = document.createElement("button");
     newBtn.innerHTML = "change";
     newBtn.classList.add("change");
     newInput.classList.add("newInput");
-    var newNode = document.createTextNode(listElement.value);
     newInput.value = span.innerHTML;
-    newInput.appendChild(newNode);
-    newInput.appendChild(newBtn);
     node.appendChild(newInput);
     node.appendChild(newBtn);
-    newBtn.onclick = push(newInput, span, node);
-    console.log(newInput.length)
+    newBtn.onclick = pushValue(newInput, span, node, newBtn);
+
   };
 };
 //замена старого значения на новое
-function push(newInput, span) {
-  return function(node) {
+function pushValue(newInput, span, newBtn,node) {
+  return function() {
     span.innerHTML = newInput.value;
+    newInput.remove();
+    node.remove();
+    
   };
 };
