@@ -13,7 +13,7 @@ submitButton.onclick = function submitTask() {
   var deleted = document.createElement("button");
   var correction = document.createElement("button");
   span.innerHTML = mainInput.value;
-  node.classList.add("element","w-100","mb-3","bg-warning","p-2","rounded","custom-control","custom-checkbox");
+  node.classList.add("element","w-100","mb-3","bg-info","p-2","rounded","custom-control","custom-checkbox");
   span.classList.add("w-100","p-3","span","rounded","align-middle");
   deleted.innerHTML = "delete";
   correction.innerHTML = "corr";

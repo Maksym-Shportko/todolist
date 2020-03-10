@@ -12,3 +12,11 @@ body{
 #main-input{
     display: inline;
 }
+.container{
+    background-image: url(img/unnamed.jpg);
+    background-repeat: repeat;
+    background-size: cover;
+}
+h1{
+    
+}
