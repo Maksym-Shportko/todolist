@@ -13,11 +13,11 @@ submitButton.onclick = function submitTask() {
   var deleted = document.createElement("button");
   var correction = document.createElement("button");
   span.innerHTML = mainInput.value;
-  node.classList.add("element","w-100","mb-3","bg-warning","p-2","rounded");
-  span.classList.add("w-100","p-3","span","rounded");
+  node.classList.add("element","w-100","mb-3","bg-warning","p-2","rounded","custom-control","custom-checkbox");
+  span.classList.add("w-100","p-3","span","rounded","align-middle");
   deleted.innerHTML = "delete";
   correction.innerHTML = "corr";
-  correction.classList.add('btn',"btn","btn-success","p-1","w-10","float-right")
+  correction.classList.add('btn',"btn","btn-success","p-1","w-3","float-right","mr-2")
   deleted.classList.add("btn","btn-danger","p-1","float-right","mb-2");
   node.appendChild(span);
   node.appendChild(deleted);
@@ -46,7 +46,7 @@ function correctionFoo(span, node) {
     var newBtn = document.createElement("button");
     newBtn.innerHTML = "change";
     newBtn.classList.add("btn","btn-primary","p-1","w-25");
-    newInput.classList.add("newInput","mb-3","input-group","rounded");
+    newInput.classList.add("newInput","mb-3","input-group","rounded","form-control");
     newInput.value = span.innerHTML;
     node.appendChild(newInput);
     node.appendChild(newBtn);
@@ -71,8 +71,8 @@ function checkTask(node, span){
     var checkBox = document.createElement('input');
     checkBox.setAttribute("type", "checkbox");
     checkBox.checked=false;
-    checkBox.classList.add('checkbox',"float-left");
-    span.appendChild(checkBox);
+    checkBox.classList.add('checkbox',"float-left","mt-2");
+    node.appendChild(checkBox);
     span.onclick=()=>{
       checkBox.classList.toggle('checked');
       if(checkBox.checked==false){

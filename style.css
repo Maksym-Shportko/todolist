@@ -9,3 +9,6 @@ body{
     align-items: center;
     display: grid;
 }
+#main-input{
+    display: inline;
+}
